@@ -38,6 +38,7 @@ gossips = []
         title: Faker::Cannabis.buzzword,
         content: Faker::Lorem.paragraphs,
         user: users.sample
+
   )
 end
 
@@ -47,4 +48,13 @@ tags = []
         title: Faker::Science.element
   )
 end
+
+add_gossips = []
+15.times do
+  add_gossips << AddGossip.create(
+        gossip: gossips.sample,
+        tag: tags.sample
+  )
+end
+
 puts "C'est prêt !"

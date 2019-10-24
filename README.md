@@ -1,24 +1,7 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+By Paul Poitrenaud (@polo sur Slack)
+To run the db :
+- `$bundle install` to install ALL the gems
+- `$rails db seed` to initialize a database
+- `$rails console` to open the console (`$rc`if you're a hackerman)
+- Try `$tp City.all`, `$tp User.all`, `$tp Gossip.all`, `$tp Tag.all` to check if everything works
