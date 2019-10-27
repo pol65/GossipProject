@@ -11,6 +11,8 @@ User.destroy_all
 City.destroy_all
 Gossip.destroy_all
 Tag.destroy_all
+AddGossip.destroy_all
+PrivateMessage.destroy_all
 
 cities = []
 10.times do
@@ -32,6 +34,13 @@ users = []
   )
 end
 
+tags = []
+10.times do
+  tags << Tag.create(
+        title: Faker::Science.element
+  )
+end
+
 gossips = []
 20.times do
   gossips << Gossip.create(
@@ -40,20 +49,18 @@ gossips = []
         user: users.sample
 
   )
-end
-
-tags = []
-10.times do
-  tags << Tag.create(
-        title: Faker::Science.element
+  AddGossip.create(
+    gossip: gossips.sample, 
+    tag: tags.sample
   )
 end
 
-add_gossips = []
-15.times do
-  add_gossips << AddGossip.create(
-        gossip: gossips.sample,
-        tag: tags.sample
+messages = []
+20.times do
+	PrivateMessage.create(
+    sender: users.sample,
+    recipient: users.sample,
+    content: Faker::ChuckNorris.fact
   )
 end
 
